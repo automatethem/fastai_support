@@ -24,7 +24,8 @@ class TensorAudio(TensorBase):
 
     @classmethod
     def create(cls, o, norm=True):
-        o, sr = torchaudio.load(o, normalization=norm)
+        #o, sr = torchaudio.load(o, normalization=norm)
+        o, sr = torchaudio.load(o)
         o = cls(o)
         o.sr = sr
         o.mode = 'raw'
